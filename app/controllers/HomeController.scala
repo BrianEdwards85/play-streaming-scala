@@ -11,4 +11,8 @@ class HomeController extends Controller {
     Ok(views.html.index())
   }
 
+
+  def newSession() = Action{
+    Ok(java.util.UUID.randomUUID.toString.replace("-",""))
+  }
 }
