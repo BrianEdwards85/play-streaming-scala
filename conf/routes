@@ -14,3 +14,10 @@ GET        /scala/eventSource/liveClock        controllers.ScalaEventSourceContr
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file                       controllers.Assets.at(path="/public", file)
+
+GET        /master                             controllers.Assets.at(path="/public", file = "master.html")
+GET        /slave                             controllers.Assets.at(path="/public", file = "slave.html")
+GET        /newSession                         controllers.HomeController.newSession()
+PUT        /slide/:session                     controllers.ScalaEventSourceController.updateSessoinSlide(session)
+
+GET        /slide/:session                     controllers.ScalaEventSourceController.streamSlides(session)
